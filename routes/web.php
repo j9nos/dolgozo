@@ -8,3 +8,7 @@ Route::get('/', function () {
 });
 
 Route::get("/workers",[WorkerController::class, "showWorkers"]);
+Route::get('/search', function () {
+    return view('search');
+});
+Route::get("/search-worker",[WorkerController::class, "showSpecificWorker"]);

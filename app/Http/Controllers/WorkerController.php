@@ -15,4 +15,10 @@ class WorkerController extends Controller
         return view("workers", ["workers"=>$workers]);
     }
 
+    public function showSpecificWorker(Request $request)
+    {
+        $worker = Worker::find($request->input('id'));
+        return view("worker", ["worker"=>$worker]);
+    }
+
 }
