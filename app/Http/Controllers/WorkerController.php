@@ -40,5 +40,6 @@ class WorkerController extends Controller
             'birthdate'=>$request->birthdate,
             'salary'=>$request->salary
         ]);
+        return back();
     }
 }
