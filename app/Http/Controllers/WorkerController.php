@@ -21,4 +21,24 @@ class WorkerController extends Controller
         return view("worker", ["worker"=>$worker]);
     }
 
+    public function kickSpecificWorker(Worker $worker)
+    {
+        $worker->delete();
+        return back();
+    }
+
+    public function openModifyMenu(Worker $worker)
+    {
+        return view("modify", ["worker"=>$worker]);
+    }
+
+    public function editSpecificWorker(Request $request, Worker $worker)
+    {
+        $worker->update([
+            'name'=>$request->name,
+            'city'=>$request->city,
+            'birthdate'=>$request->birthdate,
+            'salary'=>$request->salary
+        ]);
+    }
 }
